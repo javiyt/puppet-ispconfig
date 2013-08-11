@@ -10,7 +10,8 @@ class ispconfig
 	$ssl_altnames			= [],
 	$ssl_email				= '',
 	$ssl_days				= $ispconfig::params::ssl_days,
-	$ssl_password			= ''
+	$ssl_password			= '',
+	$jailkit_version			= $ispconfig::params::jailkit_version,
  )
 inherits ispconfig::params
 {

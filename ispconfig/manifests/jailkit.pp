@@ -1,8 +1,9 @@
 # TODO: Remove the .deb file and directory after installation
 class ispconfig::jailkit
+(
+ 	$jailkitVersion = $ispconfig::params::jailkit_version,
+ )
 {
-	$jailkitVersion = '2.16'
-
 	$tmp_path = '/tmp'
 	$jailkitDir = "jailkit-$jailkitVersion"
 	$jailkitFile = "jailkit-$jailkitVersion.tar.gz"
