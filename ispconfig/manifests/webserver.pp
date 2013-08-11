@@ -1,4 +1,10 @@
 class ispconfig::webserver
+(
+	$php_date_timezone		= $ispconfig::params::php_date_timezone,
+	$php_memory_limit			= $ispconfig::params::php_memory_limit,
+	$php_upload_max_filesize	= $ispconfig::params::upload_max_filesize,
+	$php_post_max_size		= $ispconfig::params::php_post_max_size,
+ )
 {
 	package
 	{
@@ -27,11 +33,11 @@ class ispconfig::webserver
 	{
 		'/etc/php5/php.ini':
 			display_errors			=> 'Off',
-			memory_limit			=> '256M',
+			memory_limit			=> $php_memory_limit,
 			expose_php				=> 'Off',
-			upload_max_filesize		=> '30M',
-			post_max_size			=> '30M',
-			date_timezone			=> 'Europe/Madrid',
+			upload_max_filesize		=> $php_upload_max_filesize,
+			post_max_size			=> $php_post_max_size,
+			date_timezone			=> $php_date_timezone,
 			require					=> Class['system'],
 	}
 

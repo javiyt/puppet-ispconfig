@@ -1,17 +1,21 @@
 class ispconfig
 (
- 	$mysql_root_passwd 	= $ispconfig::params::mysql_root_passwd,
-	$ssl_country			= '',
-	$ssl_organization		= '',
-	$ssl_commonname		= '',
-	$ssl_state				= '',
-	$ssl_locality				= '',
-	$ssl_unit 				= '',
-	$ssl_altnames			= [],
-	$ssl_email				= '',
-	$ssl_days				= $ispconfig::params::ssl_days,
-	$ssl_password			= '',
-	$jailkit_version			= $ispconfig::params::jailkit_version,
+ 	$mysql_root_passwd 		= $ispconfig::params::mysql_root_passwd,
+	$ssl_country				= '',
+	$ssl_organization			= '',
+	$ssl_commonname			= '',
+	$ssl_state					= '',
+	$ssl_locality					= '',
+	$ssl_unit 					= '',
+	$ssl_altnames				= [],
+	$ssl_email					= '',
+	$ssl_days					= $ispconfig::params::ssl_days,
+	$ssl_password				= '',
+	$jailkit_version				= $ispconfig::params::jailkit_version,
+	$php_date_timezone		= $ispconfig::params::php_date_timezone,
+	$php_memory_limit			= $ispconfig::params::php_memory_limit,
+	$php_upload_max_filesize	= $ispconfig::params::upload_max_filesize,
+	$php_post_max_size		= $ispconfig::params::php_post_max_size,
  )
 inherits ispconfig::params
 {
