@@ -80,7 +80,11 @@ inherits ispconfig::params
 	class
 	{
 		"ispconfig::webserver":
-			require => Class["ispconfig::spamassassin"]
+			require 						=> Class["ispconfig::spamassassin"],
+			php_date_timezone			=> $php_date_timezone,
+			php_memory_limit			=> $php_memory_limit,
+			php_upload_max_filesize	=> $upload_max_filesize,
+			php_post_max_size			=> $php_post_max_size,
 	}
 
 	class
