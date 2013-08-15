@@ -17,6 +17,7 @@ The ISPConfig module has some dependencies you need to add to your puppet module
 How to use it
 ================
 In your default.pp file call the module using:
+```puppet
 class ispconfig
 {
  	$mysql_root_passwd 		= 'test',
@@ -36,3 +37,4 @@ class ispconfig
 	$php_upload_max_filesize	= '8M',
 	$php_post_max_size		= '8M',
  }
+ ```
