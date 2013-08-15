@@ -1,5 +1,5 @@
 name 'puppet-ispconfig'
-version '0.0.1'
+version '0.0.2'
 author 'meth'
 license 'GPLv2'
 summary 'Puppet module to install ISPConfig in a LEMP environment'
