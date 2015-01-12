@@ -10,6 +10,7 @@ The ISPConfig module has some dependencies you need to add to your puppet module
 * stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
 * ntp: https://github.com/puppetlabs/puppetlabs-ntp.git
 * mysql: https://github.com/puppetlabs/puppetlabs-mysql.git
+* concat: https://github.com/puppetlabs/puppetlabs-concat.git
 * php: https://github.com/thias/puppet-php
 * pureftpd: https://github.com/saz/puppet-pureftpd
 * openssl: https://github.com/camptocamp/puppet-openssl
