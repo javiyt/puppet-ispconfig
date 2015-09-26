@@ -59,14 +59,29 @@ class ispconfig::ftp
 			password			=> $ssl_password,
 			force				=> true,
 			require				=> File['/etc/ssl/private/'],
-			notify				=> [File['/etc/ssl/private/pure-ftpd.pem'],Service['pure-ftpd-mysql']],
+			notify				=> Concat['/etc/ssl/private/pure-ftpd.pem']
 	}
 
-	file
-	{
-		'/etc/ssl/private/pure-ftpd.pem':
-			ensure 	=> file,
-			mode	=> 0600,
-			require	=> Openssl::Certificate::X509['pure-ftpd.pem'],
+	$pempath = '/etc/ssl/private/pure-ftpd.pem'
+	concat { 
+		$pempath:
+			owner => 'root',
+			group => 'root',
+			mode => '0600',
+			notify => Service['pure-ftpd-mysql']
+	}
+
+	concat::fragment{ 
+		'privatekey':
+			target => $pempath,
+			source => '/etc/ssl/private/pure-ftpd.pem.key',
+			order => '1'
+	}
+
+	concat::fragment{ 
+		'certificate':
+			target => $pempath,
+			source => '/etc/ssl/private/pure-ftpd.pem.crt',
+			order => '2',
 	}
 }
